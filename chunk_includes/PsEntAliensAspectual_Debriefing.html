@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div style='font-weight:bold; text-align: center;'>Thank you for participating in our experiment. Your responses have successfully been transmitted to our servers.</div>
+
+<h1>Debriefing</h1>
+
+<p>With this experiment, we're investigating various issues in how people understand expressions such as <span class='trigger'></span>. For example, you read sentences like the following:</p>
+
+<ol>
+	<li>Exactly one alien <span class='predicate'></span> on Planet XH.</li>
+</ol>
+
+<p>(1) claims in particular that one alien was<span class='negation'></span> red on Planet XH. In parallel to this claim, <span class='trigger'></span> conveys that there <span class='already'></span> were <span class='startNon'></span>red aliens on Home Planet. Our research investigates how speakers use this parallel information when evaluating the truth of the sentences above. In the critical trials, the picture with the visible aliens in fact contained several aliens matching the main claim (e.g. two aliens were<span class='negation'></span> red on Planet XH) but one of these two aliens didn't match the parallel information (e.g. one of the two aforementioned aliens was<span class='alreadyOrNegation'></span> red on its Home Planet<span class='toStartWith'> to start with</span>). We are interested in how likely you were to consider the parallel information of each expression to choose the picture with the visible aliens, as opposed to the picture with the hidden aliens, and how long it took you to make your choice.</p>
+
+<p>The results will help us understand to what extent speakers distinguish parallel information from regular claims and whether different expressions contribute parallel information differently.</p>
+
+<p>On a more general level, this study will inform current debates on the processing of different types of meaning in natural language and help us to design further experiments using fine-grained timing measures to understand the relative time course of these interpretations unfolding in online language processing.</p>
+
+<p>Please do not hesitate to ask any questions you like about the experiment. If you think of questions after leaving the lab, you can write to Jérémy Zehr at <a href="mailto:jeremyz@sas.upenn.edu">jeremyz@sas.upenn.edu</a>.</p>
+
+
+<script>
+	if (typeof $() == "object" && typeof data == "object"){
+		switch(data){
+			case stopItems:
+				$(".trigger").html("'Stop'");
+				$(".predicate").html("stopped being red");
+				$(".negation, .alreadyOrNegation").html("n't");
+				break;
+			case againItems:
+				$(".trigger").html("'Again'");
+				$(".predicate").html("was red again");
+				$(".alreadyOrNegation").html("n't");
+				$(".already").html("already ");
+				break;
+			case continueItems:
+				$(".trigger").html("'Continue'");
+				$(".predicate").html("continued being red");
+				$(".alreadyOrNegation").html("n't");
+				$(".already").html("already ");
+				break;
+			case stillItems:
+				$(".trigger").html("'Still'");
+				$(".predicate").html("still was red");
+				$(".alreadyOrNegation").html("n't");
+				$(".already").html("already ");
+				break;
+			case startItems:
+				$(".trigger").html("'Start'");
+				$(".predicate").html("started to be red");
+				$(".startNon").html("non-");
+				$(".alreadyOrNegation").html(" already");
+				$(".toStartWith").html("");
+				break;
+			case anymoreItems:
+				$(".trigger").html("'Anymore'");
+				$(".predicate").html("wasn't red anymore");
+				$(".negation, .alreadyOrNegation").html("n't");
+				break;
+			case nolongerItems:
+				$(".trigger").html("'No longer'");
+				$(".predicate").html("was no longer red");
+				$(".negation, .alreadyOrNegation").html("n't");
+				break;
+		}
+	}
+</script>
+
+</body>
+</html>
